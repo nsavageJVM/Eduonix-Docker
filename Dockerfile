@@ -8,7 +8,7 @@ RUN apt-get install -y maven
 # create a work directory 'code' this is where we will build and run our application
 WORKDIR /code
 
-# Prepare by downloading dependencies
+# Add the build tool files and source code
 ADD pom.xml /code/pom.xml
 RUN ["mvn", "dependency:resolve"]
 RUN ["mvn", "verify"]
